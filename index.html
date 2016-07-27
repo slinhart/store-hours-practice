@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+	<head>
+		<meta charset="utf-8">
+		<title>Store Hours Manager</title>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+		<!-- Declare and instantiate angular module -->
+		<script>angular.module('app', []);</script>
+		<script src="app/storeHoursController.js"></script>
+		<script src="app/storeHoursDirective.js"></script>
+		<script src="app/dayHoursController.js"></script>
+		<script src="app/dayHoursDirective.js"></script>
+
+		<link rel="stylesheet" href="app/assets/main.css"></script>
+	</head>
+	<body>
+		<div class="page">
+			<div class="primary-container">
+				<h1>Manage Store Hours</h1>
+				<store-hours></store-hours>
+			</div>
+		</div>
+	</body>
+</html>

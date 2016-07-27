@@ -1,0 +1,145 @@
+body {
+	/*background-color: rgba(95, 207, 128, .7);*/
+	font-family: sans-serif;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+	margin: 0;
+	color: #5f5858;
+}
+.page {
+	flex: 1;
+	background: linear-gradient(to bottom, rgba(95, 207, 128, .5), rgba(95, 207, 128, 1));
+}
+
+.primary-container {
+	width: 600px;
+	margin: 100px auto 0;
+	background-color: #FFF;
+	padding: 20px 10px;
+	border-radius: 11px;
+}
+
+h1 {
+	text-align: center;
+	font-size: 36px;
+	margin-bottom: 28px;
+}
+
+.day-label {
+	margin-right: 6px;
+	display: inline-block;
+	width: 35%;
+}
+.day-label::after {
+	content: ":";
+}
+
+.day-container {
+	position: relative;
+}
+
+.hours-container {
+	display: inline-block;
+	margin-bottom: 5px
+}
+
+.day-list-container {
+	text-align: center;
+}
+.day-list {
+	font-size: 18px;
+	display: block;
+	width: 60%;
+	margin: 0 auto;
+	padding-left: 15px;
+}
+ol {
+	list-style-type: none;
+}
+.day-list li {
+	text-align: left;
+	margin-bottom: 20px;
+}
+
+button {
+	width: 80px;
+	height: 32px;
+	border-radius: 6px;
+	border-style: none;
+	font-size: 18px;
+	background-color: rgba(95, 207, 128, 1);
+	color: #FFF;
+	cursor: pointer;
+	float: right;
+	margin: 0 10px;
+}
+button:focus {
+	outline: none;
+}
+.buttons-container {
+	height: 32px;
+	margin: 0 8px;
+}
+.cancel-button {
+	background-color: rgba(95, 88, 88, 0.5);
+}
+.button-group {
+	display: inline-block;
+	vertical-align: middle;
+}
+.button-group[data-period="AM"] .pm-button{
+	background-color: rgba(95, 88, 88, 0.3);
+}
+.button-group[data-period="PM"] .am-button{
+	background-color: rgba(95, 88, 88, 0.3);
+}
+.am-button, .pm-button {
+	float: none;
+	margin: 0;
+	width: 22px;
+	height: 13px;
+	font-size: 10px;
+	padding: 1px;
+	float: left;
+}
+.am-button {
+	border-radius: 6px 0 0 6px;
+}
+.pm-button {
+	border-radius: 0 6px 6px 0;
+}
+
+
+.hours-list-container {
+	display: inline-block;
+	width: 60%;
+	vertical-align: top;
+}
+.hours-container input {
+	width: 44px;
+	height: 18px;
+	font-size: 17px;
+	border-radius: 2px;
+	border: 2px solid #5f5858;
+	text-align: center;
+	vertical-align: middle;
+}
+.hours-container input:focus {
+	border-color: rgba(95, 207, 128, .6);
+	outline: none;
+}
+
+.add-time-button {
+	position: absolute;
+	right: -7px;
+	bottom: 9px;
+	width: 16px;
+	height: 16px;
+	border-radius: 1px;
+	padding: 0;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 14px;
+	margin: 0;
+}

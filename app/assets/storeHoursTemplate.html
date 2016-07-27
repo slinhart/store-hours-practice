@@ -1,0 +1,14 @@
+<div>
+	<div class="day-list-container">
+		<ol class="day-list">
+			<li ng-repeat="day in schedule.weekLabels">
+				<day-hours></day-hours>
+			</li>
+		</ol>
+	</div>
+	<div class="buttons-container">
+		<button class="save-button" ng-show="schedule.editable" ng-click="schedule.saveClick()">Save</button>
+		<button class="cancel-button" ng-show="schedule.editable" ng-click="schedule.cancelClick()">Cancel</button>
+		<button class="edit-button" ng-show="!schedule.editable" ng-click="schedule.editClick()">Edit</button>
+	</div>
+</div>
