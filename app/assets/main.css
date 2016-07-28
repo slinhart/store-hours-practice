@@ -143,3 +143,16 @@ button:focus {
 	font-size: 14px;
 	margin: 0;
 }
+
+.closed-button {
+	position: absolute;
+	top: 4px;
+	right: -84px;
+	width: 60px;
+	height: 16px;
+	font-size: 12px;
+	border-radius: 6px;
+}
+.closed-button[data-closed="false"] {
+	background-color: rgba(95, 88, 88, 0.3);
+}

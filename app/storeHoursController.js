@@ -18,7 +18,8 @@ angular.module('app')
 	$scope.schedule.weekLabels = week;
 	for (var i in week) {
 		$scope.schedule[week[i]] = {
-			times: [clone(defaultHours)]
+			times: [clone(defaultHours)],
+			isClosed: false
 		}
 	}
 
@@ -54,6 +55,10 @@ angular.module('app')
 	function normalizeTimes() {
 		for (var i in week) {
 			var times = $scope.schedule[week[i]].times;
+			if($scope.schedule[week[i]].isClosed) {
+				times = [];
+			}
+
 			var dateTimes = [];
 			times.forEach(function(timespan) {
 				if(timespan.start.time !== '' && timespan.end.time !== '') {

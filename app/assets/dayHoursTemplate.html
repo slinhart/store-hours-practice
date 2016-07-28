@@ -2,14 +2,15 @@
 	<div ng-show="schedule.editable">
 		<label class="day-label">{{day}}</label>
 		<div class="hours-list-container">
+			<span ng-if="$parent.schedule[day].times.length === 0">Closed</span>
 			<div class="hours-container" ng-repeat="session in schedule[day].times">
-				<input type="text" ng-model="session.start.time" />
+				<input type="text" ng-model="session.start.time" ng-disabled="schedule[day].isClosed" />
 				<div class="button-group" data-period="{{session.start.period}}">
 					<button class="am-button" ng-click="session.start.period = 'AM'">AM</button>
 					<button class="pm-button" ng-click="session.start.period = 'PM'">PM</button>
 				</div>
 				<span>-</span>
-				<input type="text" ng-model="session.end.time" />
+				<input type="text" ng-model="session.end.time" ng-disabled="schedule[day].isClosed" />
 				<div class="button-group" data-period="{{session.end.period}}">
 					<button class="am-button" ng-click="session.end.period = 'AM'">AM</button>
 					<button class="pm-button" ng-click="session.end.period = 'PM'">PM</button>
@@ -17,11 +18,13 @@
 			</div>
 		</div>
 		<button class="add-time-button" ng-click="addTimeClick()">+</button>
+		<button class="closed-button" ng-click="closedClick()" data-closed="{{schedule[day].isClosed}}">Closed</button>
 	</div>
 
 	<div ng-show="!schedule.editable">
 		<label class="day-label">{{day}}</label>
 		<div class="hours-list-container">
+			<span ng-if="$parent.schedule[day].times.length === 0">Closed</span>
 			<div class="hours-container" ng-repeat="session in $parent.schedule[day].times">
 				<span>{{session.start.time}}</span>
 				<span>{{session.start.period}}</span>
